@@ -1,39 +1,18 @@
+using EmployeeManagement.Base;
 using NUnit.Framework.Internal;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace EmployeeManagement
 {
-    public class LoginUITests
+    public class LoginUITests : AutomationWrapper
     {
-        IWebDriver driver;
+       // protected IWebDriver driver;
 
-        [SetUp]
-        public void BeforeMethod() {
-
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            driver.Url = "https://opensource-demo.orangehrmlive.com/";
-
-
-        }
-
-        [TearDown]
-        public void AfterMethod()
-        {
-
-            driver.Quit();
-        }
-        
         [Test]
-        public void ValidateTitleTest() { 
-        
-
-        
-
-            //driver.Url = "https://google";
-
+        public void ValidateTitleTest()
+        {
+             //driver.Url = "https://google;
             string actualTitle = driver.Title;
             Console.WriteLine(actualTitle);
 
@@ -41,14 +20,14 @@ namespace EmployeeManagement
 
         }
 
-          [Test]
-          public void ValidatePlaceholderTest()
+        [Test]
+        public void ValidatePlaceholderTest()
         {
 
-           
+
             //driver.FindElement(By.Name("Username")).Clear();
 
-            string actualUsernamePlaceholder=driver.FindElement(By.Name("username")).GetAttribute("placeholder");
+            string actualUsernamePlaceholder = driver.FindElement(By.Name("username")).GetAttribute("placeholder");
             Assert.That(actualUsernamePlaceholder, Is.EqualTo("Username"));
 
             string actualPasswordPlaceholder = driver.FindElement(By.Name("password")).GetAttribute("placeholder");
@@ -57,19 +36,20 @@ namespace EmployeeManagement
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
-
-
-
-
-   
-
-         
-
-           
-            
-
-        
     }
 }
 //https://opensource-demo.orangehrmlive.com/
