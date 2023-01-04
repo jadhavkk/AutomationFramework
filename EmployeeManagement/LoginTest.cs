@@ -30,17 +30,17 @@ namespace EmployeeManagement
 
         {
 
-            string[] dataSet1 = new string[2];
+            string[] dataSet1 = new string[3];
             dataSet1[0] = "peter";
             dataSet1[1] = "peter677";
             dataSet1[2] = "Invalid credential";
 
-            string[] dataSet2 = new string[2];
+            string[] dataSet2 = new string[3];
             dataSet2[0] = "jack";
             dataSet2[1] = "jack565";
             dataSet2[2] = "Invalid credential";
 
-            string[] dataSet3 = new string[2];
+            string[] dataSet3 = new string[3];
             dataSet3[0] = "paul";
             dataSet3[1] = "paul587";
             dataSet3[2] = "Invalid credential";
