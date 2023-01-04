@@ -7,7 +7,7 @@ namespace EmployeeManagement
 {
     public class LoginUITests : AutomationWrapper
     {
-       // protected IWebDriver driver;
+      
 
         [Test]
         public void ValidateTitleTest()
@@ -33,23 +33,25 @@ namespace EmployeeManagement
             string actualPasswordPlaceholder = driver.FindElement(By.Name("password")).GetAttribute("placeholder");
             Assert.That(actualPasswordPlaceholder, Is.EqualTo("Password"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 }
 //https://opensource-demo.orangehrmlive.com/
