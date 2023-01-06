@@ -36,9 +36,9 @@ namespace EmployeeManagement
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
 
            string  headerLocatorXpath="//h6[contains(normalize-space(),'****')]";
-            headerLocatorXpath = headerLocatorXpath.Replace("****", "peter");
+            headerLocatorXpath = headerLocatorXpath.Replace("****", firstname);
 
-            string actualtext = driver.FindElement(By.CssSelector("[class='oxd-text oxd-text--h6 --strong']")).Text;
+            string actualtext = driver.FindElement(By.XPath(headerLocatorXpath)).Text;
 
             // actualtext.Contains(actualtext);
 
