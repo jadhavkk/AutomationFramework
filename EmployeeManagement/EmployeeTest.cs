@@ -35,16 +35,22 @@ namespace EmployeeManagement
 
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
 
+           string  headerLocatorXpath="//h6[contains(normalize-space(),'****')]";
+            headerLocatorXpath = headerLocatorXpath.Replace("****", "peter");
+
             string actualtext = driver.FindElement(By.CssSelector("[class='oxd-text oxd-text--h6 --strong']")).Text;
-            actualtext.Contains(actualtext);
+
+            // actualtext.Contains(actualtext);
+
             // actualtext.CompareTo(actualtext);
-            // // actualtext.ToCharArray();
 
 
 
-            Assert.That(actualresult.Contains(actualtext), "Assertion is not work");
+            //Assert.That(actualresult.Contains(actualtext), "Unable to do  the Assertion");
 
+            Assert.That(actualtext, Is.EqualTo(actualresult));
 
+               
 
 
 
@@ -68,3 +74,7 @@ namespace EmployeeManagement
         }
     }
 }
+
+
+
+// // actualtext.CompareTo(actualtext);

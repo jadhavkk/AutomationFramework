@@ -74,5 +74,24 @@ namespace EmployeeManagement.Utilities
 
 
         }
+
+
+
+        public static object[] InvalidLoginData2()
+        {
+            object[] data = ExcelUtils.GetSheetIntoObjectArray
+                (@"C:\Users\komalj\Desktop\SeleniumC#22\AutomationFramework\EmployeeManagement\TestData\Orange_data.xlsx", "InvalidLoginTest");
+            return data;
+        }
+
+
+        public static object[] AddEmployeeTest()
+        {
+            object[] data = ExcelUtils.GetSheetIntoObjectArray
+                (@"C:\Users\komalj\Desktop\SeleniumC#22\AutomationFramework\EmployeeManagement\TestData\Orange_data.xlsx", "AddEEmployeeTest");
+            return data;
+        }
     }
 }
+
+

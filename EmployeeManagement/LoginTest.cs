@@ -28,8 +28,11 @@ namespace EmployeeManagement
         }
 
         [Test,TestCaseSource(typeof(DataSource),(nameof(DataSource.InvalidLoginData)))]
+
        //[TestCase("john","john234","Invalid credential")]
-       // [TestCase("jack","jack345","Invalid credential")]
+       
+        // [TestCase("jack","jack345","Invalid credential")]
+
         //[TestCase("peter","peter55","Invalid credential")]
         public void InvalidLoginTest(string username,string password,string expectedError )
         {
@@ -39,8 +42,11 @@ namespace EmployeeManagement
 
             string actualError = driver.FindElement(By.XPath("//p[contains(normalize-space(),'cred')]")).Text;
             //(By.PartialLinkText("Invalid credentials"))
+
             Console.WriteLine(actualError.ToUpper());
+
            // Assert.That(actualError.Contains("Invalid Credential"));
+
             Assert.That(actualError.Contains(expectedError),"Assertion on error message");
 
             //Assert.That(true);
