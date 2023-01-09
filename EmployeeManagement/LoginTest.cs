@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Base;
+using EmployeeManagement.Pages;
 using EmployeeManagement.Utilities;
 using OpenQA.Selenium;
 using System;
@@ -14,8 +15,21 @@ namespace EmployeeManagement
         [Test]
         public void ValidLoginTest()
         {
-            driver.FindElement(By.Name("username")).SendKeys("username");
-            driver.FindElement(By.Name("password")).SendKeys("password");
+
+           /* driver.FindElement(By.Name("username")).SendKeys("username");
+             driver.FindElement(By.Name("password")).SendKeys("password"); */
+
+
+
+           LoginPage loginpage = new LoginPage(driver);
+            loginpage.EnterUsername("Admin");
+            loginpage.EnterPassword("password");
+            loginpage.ClickOnLogin();
+
+            actualError actual= loginpage.GetInvalidErrorMessage();
+
+
+
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
            // button[normalize-space=' Login '])
 
